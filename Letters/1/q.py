@@ -1,5 +1,6 @@
 from scipy.ndimage import rotate as rotate_image
 import cv2
+import os
 l = 1
 while(l < 10):
   image = cv2.imread(str(l)+'.jpg', cv2.IMREAD_GRAYSCALE)
@@ -12,3 +13,16 @@ while(l < 10):
     i = i + 1
     g = g + 5
   l = l + 1
+n = 1
+# from os import listdir
+
+g = os.listdir('./dataset1')
+
+i = 0 
+while( i < len(g)):
+  os.rename('./dataset1/'+g[i], './dataset1/'+str(n)+'_'+str(i)+'.jpg')
+  i = i + 1
+
+
+
+# os.rename('a.txt', 'b.kml')
